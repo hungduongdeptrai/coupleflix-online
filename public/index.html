@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoupleFlix Basic (Stable)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CoupleFlix Basic (Stable)</h1>
+
+        <!-- Join Section -->
+        <section id="join-section" class="card">
+            <h2>Vào phòng</h2>
+            <input type="text" id="username-input" placeholder="Tên của bạn" required>
+            <input type="text" id="room-id-input" placeholder="ID Phòng" required>
+            <button id="join-btn">Vào</button>
+            <p id="join-error" class="error"></p>
+        </section>
+
+        <!-- Watch Section (Hidden) -->
+        <main id="watch-section" class="hidden">
+            <div class="main-area">
+                <h2 id="room-id-display">Phòng: ...</h2>
+                <div id="player-wrapper">
+                    <div id="player"></div> <!-- YT Player -->
+                </div>
+                <!-- *** Điều khiển riêng biệt *** -->
+                <div class="controls card">
+                    <h4>Điều khiển</h4>
+                    <button id="play-btn" disabled>Play ▶</button>
+                    <button id="pause-btn" disabled>Pause ||</button>
+                    <div class="seek-container">
+                        <span id="time-display">0:00 / 0:00</span>
+                        <input type="range" id="seek-bar" value="0" min="0" step="1" disabled>
+                    </div>
+                 </div>
+                 <div class="change-video card">
+                     <h4>Đổi Video</h4>
+                     <!-- *** Chỉ nhập ID *** -->
+                     <input type="text" id="video-id-input" placeholder="Nhập YouTube Video ID (11 ký tự)">
+                     <button id="change-video-btn">Đổi</button>
+                 </div>
+            </div>
+            <aside class="sidebar">
+                <div class="user-list card">
+                    <h3>Đang xem</h3>
+                    <ul id="user-list">(Trống)</ul>
+                </div>
+                <div class="chat card">
+                    <h3>Chat</h3>
+                    <div id="chat-output"></div>
+                    <div class="chat-input">
+                        <input type="text" id="chat-input" placeholder="Nhập tin nhắn...">
+                        <button id="send-chat-btn">Gửi</button>
+                    </div>
+                </div>
+            </aside>
+        </main>
+        <p id="error-display" class="error global"></p>
+
+    </div> <!-- /container -->
+
+    <!-- Scripts -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+</body>
+</html>

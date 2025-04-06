@@ -1,0 +1,55 @@
+/* Basic Reset & Body */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: sans-serif; background-color: #222; color: #eee; padding: 20px; line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; }
+h1 { text-align: center; color: #0af; margin-bottom: 20px; }
+.hidden { display: none !important; }
+.card { background-color: #333; border-radius: 5px; padding: 15px; margin-bottom: 15px; }
+.card h2, .card h3, .card h4 { margin-top: 0; margin-bottom: 10px; color: #0cf; border-bottom: 1px solid #555; padding-bottom: 5px; }
+button { padding: 8px 12px; background-color: #0af; color: #fff; border: none; border-radius: 3px; cursor: pointer; margin-left: 5px; }
+button:hover:not(:disabled) { background-color: #0cf; }
+button:disabled { background-color: #555; cursor: not-allowed; color: #aaa; }
+input[type="text"], input[type="password"] { padding: 8px; border-radius: 3px; border: 1px solid #555; background-color: #eee; color: #333; margin-right: 5px; font-size: 1em; }
+
+/* Join Section */
+#join-section input { display: block; margin-bottom: 10px; width: 100%; max-width: 300px; }
+#join-section button { display: block; width: 100%; max-width: 316px; margin-left: 0; margin-top: 10px; }
+
+/* Watch Section Layout */
+#watch-section { display: flex; flex-direction: column; gap: 20px; }
+@media (min-width: 800px) {
+    #watch-section { flex-direction: row; }
+    .main-area { flex: 3; }
+    .sidebar { flex: 1; min-width: 250px; max-width: 300px; }
+}
+
+/* Main Area */
+.main-area { display: flex; flex-direction: column; gap: 15px; }
+#room-id-display { font-size: 1.2em; font-weight: bold; color: #ccc; margin-bottom: 5px; }
+#player-wrapper { position: relative; width: 100%; aspect-ratio: 16/9; background-color: #000; border-radius: 5px; overflow: hidden;}
+#player { width: 100%; height: 100%; border: none; }
+.controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; } /* Giữ lại div controls */
+.controls .seek-container { display: flex; align-items: center; gap: 10px; flex-grow: 1; margin: 5px 0;} /* Container cho seek */
+#seek-bar { flex-grow: 1; cursor: pointer; margin: 0 5px; }
+#time-display { font-size: 0.9em; color: #aaa; min-width: 90px; text-align: center; } /* Span chứa time */
+.change-video { margin-top: 10px; display: flex; }
+.change-video input { flex-grow: 1; }
+
+/* Sidebar */
+.sidebar { display: flex; flex-direction: column; gap: 15px; }
+.user-list ul { list-style: none; font-size: 0.95em; padding: 0; }
+.user-list li { padding: 3px 0; }
+.user-list .you { font-weight: bold; color: #0af; }
+.chat { display: flex; flex-direction: column; flex-grow: 1; min-height: 250px; }
+#chat-output { border: 1px solid #555; background-color: #2a2a2a; padding: 10px; flex-grow: 1; overflow-y: auto; margin-bottom: 10px; border-radius: 3px; font-size: 0.9em; }
+#chat-output p { margin-bottom: 6px; word-wrap: break-word; line-height: 1.4; }
+#chat-output .system { color: #aaa; font-style: italic; }
+#chat-output .my-message strong { display: none; }
+#chat-output .my-message { text-align: right; color: #ddd; }
+#chat-output .other-message strong { color: #0cf; font-weight: bold; }
+.chat-input { display: flex; margin-top: auto; }
+.chat-input input { flex-grow: 1; }
+
+/* Error Messages */
+.error { color: #f88; font-size: 0.9em; margin-top: 8px; font-weight: bold; min-height: 1.1em;}
+.global { text-align: center; padding: 8px; background-color: #5a3a3a; border-radius: 4px; }
